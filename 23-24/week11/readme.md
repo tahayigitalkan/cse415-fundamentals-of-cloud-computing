@@ -1,6 +1,10 @@
 # Lab 11 Exercise 
 In this lab exercise, you'll deploy a very basic Todo App. To do that, you'll create a Cosmos DB instance that will keep app data, a Web API that interacts with the DB, and a function that listens to the DB events and sends e-mail notifications.
 
+
+![image](https://github.com/tahayigitalkan/cse415-fundamentals-of-cloud-computing/assets/24842468/c0c5b0ff-4e00-47f6-acd2-f20de50576a5)
+
+
 ## Create a new Resource Group
 In the Azure Portal, search Research Groups and select + Create.
 
