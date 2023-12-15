@@ -119,19 +119,16 @@ Open projects in your IDE. (Visual Studio or VS Code) and deploy to azure Resour
 VsCode:
 
 Function App:
-![image](https://github.com/tahayigitalkan/cse415-fundamentals-of-cloud-computing/assets/24842468/192ada88-8d67-48fc-a569-da717bc85d2b)
-
->Detailed information: https://learn.microsoft.com/en-us/azure/azure-functions/functions-develop-vs-code?tabs=node-v3%2Cpython-v2%2Cisolated-process&pivots=programming-language-csharp
+![ezgif com-gif-to-webp-converted](https://github.com/tahayigitalkan/cse415-fundamentals-of-cloud-computing/assets/24842468/5ce000a6-c871-4160-87f3-d85cd79864c5)
 
 Web App:
-![image](https://github.com/tahayigitalkan/cse415-fundamentals-of-cloud-computing/assets/24842468/3f0714e8-84bf-487f-bae2-2d51eb106d6d)
+![ezgif com-optimize (1)](https://github.com/tahayigitalkan/cse415-fundamentals-of-cloud-computing/assets/24842468/fe4527b6-dab2-4f2d-9c62-9f5d5a22e9dd)
 
-> Detailed information: https://github.com/dotnet/AspNetCore.Docs/blob/main/aspnetcore/tutorials/publish-to-azure-webapp-using-vscode.md 
 
 Visual Studio:
-Click Publish - Azure and follow the instructions.
-![image](https://github.com/tahayigitalkan/cse415-fundamentals-of-cloud-computing/assets/24842468/0aaf34f1-5d0b-427e-a4d2-e4839bb6dbe7)
-![image](https://github.com/tahayigitalkan/cse415-fundamentals-of-cloud-computing/assets/24842468/cc6afac0-3fc3-4a03-9578-5685ee8c51e3)
+You can download "publish profile" and use it in the Visual Studio. 
+![2023-12-15_21h11_27](https://github.com/tahayigitalkan/cse415-fundamentals-of-cloud-computing/assets/24842468/eb797004-ef85-4134-9ab7-0d9db77ae32d)
+
 
 
 ## Test your deployment
