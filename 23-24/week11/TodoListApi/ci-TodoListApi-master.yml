@@ -1,7 +1,7 @@
 trigger:
   paths:
     include:
-      - 'Services/**/*'
+      - '23-24/week11/TodoListApi/*'
   branches:
     include:
       - main
@@ -20,7 +20,7 @@ steps:
   displayName: 'Build the application'
   inputs:
     command: 'build'
-    projects: '**/*.csproj'
+    projects: '$(System.DefaultWorkingDirectory)/23-24/week11/TodoListApi/TodoListApi.csproj'
     arguments: '--configuration Release'
 
 - task: DotNetCoreCLI@2

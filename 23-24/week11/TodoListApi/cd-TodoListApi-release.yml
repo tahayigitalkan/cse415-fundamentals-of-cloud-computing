@@ -1,0 +1,33 @@
+trigger: none
+pr: none
+
+resources:
+  pipelines:
+  - pipeline: 'ci-TodoListApi-master'
+    source: 'ci-TodoListApi-master'
+    trigger: true
+
+jobs:
+- job: Deploy
+  displayName: 'Deploy to Azure App Service'
+  pool:
+    vmImage: 'windows-latest'
+
+  steps:
+  - task: DownloadBuildArtifacts@0
+    displayName: 'Download artifacts'
+    inputs:
+      buildType: specific
+      project: 'cse415-cloud-computing' # Replace with the name of your Azure DevOps project
+      pipeline: ci-TodoListApi-master
+      artifactName: 'drop'
+      downloadPath: '$(Build.ArtifactStagingDirectory)'
+
+  - task: AzureRmWebAppDeployment@4
+    displayName: 'Deploy to Azure App Service'
+    inputs:
+      ConnectionType: 'AzureRM'
+      azureSubscription: 'Csar Arge Default Subscription'  # Replace with the name of your Azure service connection
+      appType: 'webApp'
+      WebAppName: 'csartarge-week11'  # Replace with the name of your Azure Web App
+      packageForLinux: '$(Build.ArtifactStagingDirectory)/drop/**/*.zip'
