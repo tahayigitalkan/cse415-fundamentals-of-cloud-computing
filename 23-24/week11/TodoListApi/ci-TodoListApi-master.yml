@@ -27,7 +27,8 @@ steps:
   displayName: 'Publish the application'
   inputs:
     command: 'publish'
-    publishWebProjects: true
+    projects: '$(System.DefaultWorkingDirectory)/23-24/week11/TodoListApi/TodoListApi.csproj'
+    publishWebProjects: false
     arguments: '--configuration Release --output $(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
