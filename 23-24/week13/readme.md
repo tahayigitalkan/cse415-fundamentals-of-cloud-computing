@@ -67,7 +67,7 @@ Apply the same steps for the CD pipelines and you'll have:
 ![Screenshot 2023-12-27 233929](https://github.com/tahayigitalkan/cse415-fundamentals-of-cloud-computing/assets/24842468/ab68c777-ecf0-4c81-a715-f2952fabcf16)
 
 
-## Testing your pipelines
+## Test your pipelines
  Add a single-line comment to the Program.cs and commit it to the main branch. 
  You can see that ci-pipeline automatically triggered
 
@@ -78,4 +78,52 @@ After the CI pipeline, the CD pipeline will be triggered automatically. You can 
 
 ![2023-12-27_23h44_45](https://github.com/tahayigitalkan/cse415-fundamentals-of-cloud-computing/assets/24842468/45d695f5-76b3-444b-9e6c-7def38a9b1e2)
 
+ ## Configure Your Web App to use App Configuration
+
+Go to the App Configuration resource you created last week. Create 4 key-value that are used by the web app.
+* AzureCosmosDBSettings:Url
+* AzureCosmosDBSettings:PrimaryKey
+* AzureCosmosDBSettings:DatabaseName
+* AzureCosmosDBSettings:ContainerName
+  
+![image](https://github.com/tahayigitalkan/cse415-fundamentals-of-cloud-computing/assets/24842468/e9e506cf-e6de-41a5-9d7a-232c8acde623)
+
+Copy your App Configuration endpoint
+![image](https://github.com/tahayigitalkan/cse415-fundamentals-of-cloud-computing/assets/24842468/f90b6359-b999-471a-841f-71a56bc908c9)
+
+Go to your web app and select Configuration on the left menu. Delete old Azure Cosmos configurations.
+Add new Configuration `AppConfigUrl`
+
+![image](https://github.com/tahayigitalkan/cse415-fundamentals-of-cloud-computing/assets/24842468/4a1b60ec-4873-4480-b273-6a8e0a28e54f)
+
+
+Now, you need to modify your source code to use Azure App Configuration
+
+Open the TodoLoistApi project in VsCode
+
+Modify TodoListApi.csproj file and add the following dependencies:
+
+`<PackageReference Include="Azure.Identity" Version="1.10.4" />`
+`<PackageReference Include="Microsoft.Azure.AppConfiguration.AspNetCore" Version="6.1.1" />`
+
+![image](https://github.com/tahayigitalkan/cse415-fundamentals-of-cloud-computing/assets/24842468/e8828b96-1e1c-4335-b03d-d8620cbfa28f)
+
+Open Program.cs file and add the following code snippets:
+
+`using Azure.Identity;`
+
+
+```
+builder.Configuration.AddAzureAppConfiguration(options =>`
+{
+    options.Connect(
+           new Uri(builder.Configuration["AppConfigUrl"]),
+           new DefaultAzureCredential());
+});
+```
  
+![image](https://github.com/tahayigitalkan/cse415-fundamentals-of-cloud-computing/assets/24842468/77cf0004-a1c9-4a87-8067-bb39788e9fbd)
+
+Commit your changes to the main branch or merge via pull request. Pipelines will be triggered automatically and will deploy your code. 
+
+In the next week, you'll configure an Azure key vault to store sensitive data like connection strings. 
