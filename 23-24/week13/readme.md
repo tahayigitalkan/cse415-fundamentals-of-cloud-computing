@@ -103,8 +103,10 @@ Open the TodoLoistApi project in VsCode
 
 Modify TodoListApi.csproj file and add the following dependencies:
 
-`<PackageReference Include="Azure.Identity" Version="1.10.4" />`
-`<PackageReference Include="Microsoft.Azure.AppConfiguration.AspNetCore" Version="6.1.1" />`
+```
+<PackageReference Include="Azure.Identity" Version="1.10.4" />
+<PackageReference Include="Microsoft.Azure.AppConfiguration.AspNetCore" Version="6.1.1" />
+```
 
 ![image](https://github.com/tahayigitalkan/cse415-fundamentals-of-cloud-computing/assets/24842468/e8828b96-1e1c-4335-b03d-d8620cbfa28f)
 
