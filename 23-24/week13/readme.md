@@ -116,7 +116,7 @@ Open Program.cs file and add the following code snippets:
 
 
 ```
-builder.Configuration.AddAzureAppConfiguration(options =>`
+builder.Configuration.AddAzureAppConfiguration(options =>
 {
     options.Connect(
            new Uri(builder.Configuration["AppConfigUrl"]),
