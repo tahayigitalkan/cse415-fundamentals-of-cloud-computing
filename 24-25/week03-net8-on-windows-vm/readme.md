@@ -79,7 +79,7 @@ For IIS to host .NET 8 applications, you must install the **.NET 8 Hosting Bundl
 
 ## Step 4: Test the API Deployment
 
-1. Open a browser and navigate to `http://localhost` or `http://<your-server-ip>`.
+1. Open a browser and navigate to `http://localhost/example` or `http://<your-server-ip>/example`.
 2. If the API is correctly deployed, you should see the default response or Swagger documentation (depending on how the API is set up).
 
 If you encounter issues, check the following:
