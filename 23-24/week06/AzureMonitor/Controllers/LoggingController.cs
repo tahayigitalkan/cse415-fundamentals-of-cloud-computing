@@ -9,7 +9,6 @@ namespace AzureMonitor.Controllers
     public class LoggingController : ControllerBase
     {
      
-
         private readonly ILogger<LoggingController> _logger;
 
         public LoggingController(ILogger<LoggingController> logger)
